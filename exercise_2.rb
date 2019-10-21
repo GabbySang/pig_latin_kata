@@ -1,4 +1,4 @@
-# Develop your proram to handle multiple consonants at the start of words.
+# Develop your program to handle multiple consonants at the start of words.
 #
 # The rule is:
 # If the word starts with one or more consonants, move them to the end.
@@ -7,9 +7,24 @@
 #
 # Still assume the words are lowercase.
 
-def pig_latin(word)
+def pig_latin (word)
 
-end
+  if word.start_with?("a" , "e" , "i" , "o" , "u")
+
+return word + 'way'
+
+else
+      consonants = []
+      consonants << word[0]
+        if ["a", "e", "i", "o", "u"].include?(word[1]) == false
+          consonants << word[1]
+          if ["a", "e", "i", "o", "u"].include?(word[2]) == false
+            consonants << word[2]
+          end
+        end
+      "#{word[consonants.length..-1] + consonants.join + "ay"}"
+    end
+    end 
 
 ## Tests:
 
