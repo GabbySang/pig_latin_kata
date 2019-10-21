@@ -4,9 +4,35 @@
 #      quilt -> iltquay
 #      qat   -> atqay
 
-def pig_latin(word)
+def pig_latin (word)
 
-end
+  if word.start_with?("a" , "e" , "i" , "o" , "u")
+
+return word + 'way'
+
+elsif word.start_with?("qu")
+      qu = []
+      qu << word[0]
+        if ["u"].include?(word[1]) == true
+          qu << word[1]
+      "#{word[qu.length..-1] + qu.join + "ay"}"
+    end
+
+
+else
+      consonants = []
+      consonants << word[0]
+        if ["a", "e", "i", "o", "u"].include?(word[1]) == false
+          consonants << word[1]
+          if ["a", "e", "i", "o", "u"].include?(word[2]) == false
+            consonants << word[2]
+          end
+        end
+      "#{word[consonants.length..-1] + consonants.join + "ay"}"
+    end
+    end
+
+
 
 ## Tests:
 
