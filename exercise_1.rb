@@ -10,7 +10,17 @@
 # Assume the words are lowercase.
 # Assume your user is a developer — e.g. you don't need to write a user interface.
 
-def pig_latin(word)
+
+def pig_latin (word)
+
+if word.start_with?("a" , "e" , "i" , "o" , "u")
+
+return word + 'way'
+else
+  return word.split.map { |word| word.chars.rotate.join }.join('') + "ay"
+
+  end
+
 
 end
 
